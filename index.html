@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript: arrows</title>
+</head>
+<body>
+    <script>
+        const movie = {
+  title: 'Star Wars',
+  ratings: [4.8, 4.9, 4.7],
+  printThis: () => console.log(this),
+  getTitle: () => console.log(this.title),
+  addRating: (val) => {
+    this.ratings.push(val);
+    
+    return this.ratings.reduce((a, b) => a + b) / this.ratings.length;
+  }
+};
+
+console.log(movie.title); // Star Wars
+console.log(movie.getTitle()); // Star Wars
+console.log(movie.printThis());
+console.log(movie.addRating(4.6)); 
+    </script>
+</body>
+</html>
